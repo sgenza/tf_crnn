@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.contrib import rnn
 
 import config
-from utils import ground_truth_to_word, batch_ground_truth_to_word
+from utils import batch_ground_truth_to_word
 from data import DataGenerator
 
 
