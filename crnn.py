@@ -9,9 +9,8 @@ from data import DataGenerator
 
 class CRNN(object):
 
-	def __init__(self, phase, lstm_units, num_classes):
-		
-		self.phase = phase
+	def __init__(self, lstm_units, num_classes):
+
 		self.lstm_units = lstm_units
 		self.num_classes = num_classes
 
@@ -240,7 +239,7 @@ if __name__ == '__main__':
 	# Usage example
 	with tf.Graph().as_default():
 
-		model = CRNN(phase='train', lstm_units=config.lstm_units, num_classes=config.num_classes)
+		model = CRNN(lstm_units=config.lstm_units, num_classes=config.num_classes)
 		model.train(epochs=5)
 		model.check_accuracy('SVT')
 		model.check_accuracy('IIIT5K')
