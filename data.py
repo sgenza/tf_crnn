@@ -29,7 +29,7 @@ class DataGenerator(object):
 
 		if self.dataset == 'Synth90k':
 
-			dir_path = '90kDICT32px/'
+			dir_path = 'synth90k/'
 
 			# File reading
 			if self.mode == 'train':
