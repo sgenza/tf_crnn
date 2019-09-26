@@ -19,28 +19,28 @@ class CRNN(object):
 		# CNN feature extraction.
 		with tf.variable_scope(name_scope):
 
-			conv_1 = tf.layers.conv2d(inputs=x, filters = 64, kernel_size = (3, 3), 
-										padding = "same", activation=tf.nn.relu, name='conv_1')
+			conv_1 = tf.layers.conv2d(inputs=x, filters=64, kernel_size=[3, 3], 
+										padding='same', activation=tf.nn.relu, name='conv_1')
 			pool_1 = tf.layers.max_pooling2d(inputs=conv_1, pool_size=[2, 2], strides=2, name='pool_1')
-			conv_2 = tf.layers.conv2d(inputs=pool_1, filters = 128, kernel_size = (3, 3), 
-										padding = "same", activation=tf.nn.relu, name='conv_2')
+			conv_2 = tf.layers.conv2d(inputs=pool_1, filters=128, kernel_size=[3, 3], 
+										padding='same', activation=tf.nn.relu, name='conv_2')
 			pool_2 = tf.layers.max_pooling2d(inputs=conv_2, pool_size=[2, 2], strides=2, name='pool_2')
-			conv_3 = tf.layers.conv2d(inputs=pool_2, filters = 256, kernel_size = (3, 3), 
-										padding = "same", activation=tf.nn.relu, name='conv_3')
+			conv_3 = tf.layers.conv2d(inputs=pool_2, filters=256, kernel_size=[3, 3], 
+										padding='same', activation=tf.nn.relu, name='conv_3')
 			bn_1 = tf.layers.batch_normalization(conv_3, name='bn_1')
-			conv_4 = tf.layers.conv2d(inputs=bn_1, filters = 256, kernel_size = (3, 3), 
-										padding = "same", activation=tf.nn.relu, name='conv_4')
+			conv_4 = tf.layers.conv2d(inputs=bn_1, filters=256, kernel_size=[3, 3], 
+										padding='same', activation=tf.nn.relu, name='conv_4')
 			pool_3 = tf.layers.max_pooling2d(inputs=conv_4, pool_size=[2, 2], 
-										strides=[1, 2], padding="same", name='pool_3')
-			conv_5 = tf.layers.conv2d(inputs=pool_3, filters = 512, kernel_size = (3, 3), 
-										padding = "same", activation=tf.nn.relu, name='conv_5')
+										strides=[1, 2], padding='same', name='pool_3')
+			conv_5 = tf.layers.conv2d(inputs=pool_3, filters=512, kernel_size=[3, 3], 
+										padding='same', activation=tf.nn.relu, name='conv_5')
 			bn_2 = tf.layers.batch_normalization(conv_5, name='bn_2')
-			conv_6 = tf.layers.conv2d(inputs=bn_2, filters = 512, kernel_size = (3, 3), 
-										padding = "same", activation=tf.nn.relu, name='conv_6')
+			conv_6 = tf.layers.conv2d(inputs=bn_2, filters=512, kernel_size=[3, 3], 
+										padding='same', activation=tf.nn.relu, name='conv_6')
 			pool_4 = tf.layers.max_pooling2d(inputs=conv_6, pool_size=[2, 2], 
-										strides=[1, 2], padding="same", name='pool_4')
-			conv_7 = tf.layers.conv2d(inputs=pool_4, filters = 512, kernel_size = (2, 2), 
-										padding = "valid", activation=tf.nn.relu, name='conv_7')
+										strides=[1, 2], padding='same', name='pool_4')
+			conv_7 = tf.layers.conv2d(inputs=pool_4, filters=512, kernel_size=[2, 2], 
+										padding='valid', activation=tf.nn.relu, name='conv_7')
 		return conv_7
 
 	def map_to_sequence(self, x, name_scope):
