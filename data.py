@@ -213,14 +213,3 @@ class DataGenerator(object):
 					tg_batch = sparse_tuple_from(np.reshape(np.array(tg_batch), (-1)))
 
 					yield x_batch, y_batch, tg_batch
-
-if __name__ == '__main__':
-
-	import time
-	synth_gen = iter(DataGenerator(64, 'Synth90k', 'train'))
-	start = time.time()
-	for i in range(200):
-		a = next(synth_gen)
-		print(i)
-	end = time.time()
-	print('{} seconds'.format(end - start))
