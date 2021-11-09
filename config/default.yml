@@ -1,0 +1,20 @@
+common:
+    mjsynth_dir: 'synth90k'
+    svt_dir: 'SVT'
+    iiit5k_dir: 'IIIT5K'
+    alphabet: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-'.!?,\""
+    img_width: 100
+    img_height: 32
+    lstm_units: 256
+    val_interval: 10
+    val_steps: 500
+    save_interval: 10
+    use_beam_search: True
+    seed: 42
+    ckpt_dir: False
+train:
+    batch_size: 64
+    learning_rate: 0.0001
+    epochs: 5
+eval:
+    batch_size: 1
