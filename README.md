@@ -1,6 +1,6 @@
 # Convolutional Recurrent Neural Network (CRNN)
 This is a TensorFlow implementation of CRNN for scene text recognition.\
-The model consists of a CNN stage extracting features which are fed to an RNN stage (Bidirectional LSTM) and a CTC-loss.\
+The model consists of a CNN stage extracting features which are fed to an RNN stage and a CTC-loss.\
 You can find the original paper [here](https://arxiv.org/abs/1507.05717).
 
 ![CRNN architecture](./images/arch.png)
