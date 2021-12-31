@@ -25,8 +25,8 @@ and install dependencies:
     docker run -it <your_image_tag>
 ## Training
 
-Synth 90k dataset can be downloaded from this [site](https://www.robots.ox.ac.uk/~vgg/data/text/).
-Once downloaded, you need to place the data in the synth90k/ directory. \
+Synth 90k dataset can be downloaded from this [site](https://www.robots.ox.ac.uk/~vgg/data/text/).\
+Once downloaded, you need to place the data in the synth90k/ directory.\
 You can use your own data, but the annotation files need to conform the Synth 90k format.
 
 Modify the parameters in config/default.yml (or create your own config file) and run:
